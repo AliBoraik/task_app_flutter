@@ -27,3 +27,32 @@ The app defines the following use cases:
 - `removeUsername()`: Removes the username. Returns `Either<Failure, Ok>` indicating success or failure.
 
 ## Getting Started
+To run this project locally, follow these steps:
+
+1. Ensure you have Flutter installed on your development machine.
+2. Clone this repository .
+3. Open the project in your preferred IDE.
+4. Run `flutter pub get` to fetch the project dependencies.
+5. Connect a device or start an emulator.
+6. Run `flutter run` to launch the app.
+
+## Dependencies
+
+This project relies on the following dependencies:
+
+- [cupertino_icons](https://pub.dev/packages/cupertino_icons): Flutter's official set of Cupertino icons.
+- [dartz](https://pub.dev/packages/dartz): A functional programming library for Dart, providing tools for error handling and immutable data structures.
+- [equatable](https://pub.dev/packages/equatable): Provides equality comparisons for Dart objects.
+- [internet_connection_checker](https://pub.dev/packages/internet_connection_checker): A plugin to check the internet connection status in Flutter apps.
+- [get_it](https://pub.dev/packages/get_it): A simple service locator for Dart and Flutter projects.
+- [flutter_bloc](https://pub.dev/packages/flutter_bloc): A state management library for Flutter that implements the BLoC pattern.
+- [sqflite](https://pub.dev/packages/sqflite): Flutter plugin for SQLite, a self-contained, serverless, zero-configuration, transactional SQL database engine.
+- [path](https://pub.dev/packages/path): A library to handle file and directory paths in Dart.
+- [uuid](https://pub.dev/packages/uuid): A package for creating and working with RFC4122 UUIDs.
+- [dotted_border](https://pub.dev/packages/dotted_border): A Flutter package to create a dotted border around widgets.
+- [intl](https://pub.dev/packages/intl): Flutter package for internationalization support.
+- [flutter_week_view](https://pub.dev/packages/flutter_week_view): A week view widget for Flutter.
+- [flutter_svg](https://pub.dev/packages/flutter_svg): A Flutter SVG rendering library.
+- [shared_preferences](https://pub.dev/packages/shared_preferences): Flutter plugin for reading and writing simple key-value pairs.
+
+
