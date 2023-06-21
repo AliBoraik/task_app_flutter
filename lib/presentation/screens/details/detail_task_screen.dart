@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task/data/models/task.dart';
 import 'package:task/presentation/screens/details/add_task_screen.dart';
 
+import '../../../core/constants/strings.dart';
 import '../../bloc/task/task_bloc.dart';
 import 'widgets/task_detail_view.dart';
 
@@ -52,19 +53,19 @@ class TaskDetailScreen extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Are you sure?'),
+                  title: const Text(kDialogAreYouSureText),
                   content: const Text(
-                    'Do you want to delete the item from the task?',
+                    kConfirmationText,
                   ),
                   actions: <Widget>[
                     TextButton(
-                      child: const Text('No'),
+                      child: const Text(kNoText),
                       onPressed: () {
                         Navigator.of(ctx).pop();
                       },
                     ),
                     TextButton(
-                      child: const Text('Yes'),
+                      child: const Text(kYesText),
                       onPressed: () {
                         BlocProvider.of<TaskBloc>(context)
                             .add(DeleteTaskEvent(task.id));
@@ -98,7 +99,7 @@ class TaskDetailScreen extends StatelessWidget {
                   SizedBox(
                     width: 4,
                   ),
-                  Text('delete'),
+                  Text(kDeleteText),
                 ],
               ),
             ),
@@ -108,7 +109,7 @@ class TaskDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
                   Icon(Icons.edit, color: Colors.black),
-                  Text('edit'),
+                  Text(kEditText),
                 ],
               ),
             ),
@@ -118,38 +119,3 @@ class TaskDetailScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-// Container(
-//                             height: height,
-//                             width: width,
-//                             padding: const EdgeInsets.only(left: 10),
-//                             child: Column(
-//                               crossAxisAlignment: CrossAxisAlignment.start,
-//                               children: [
-//                                 Row(
-//                                   children: [
-//                                     Text(
-//                                       event.title,
-//                                       style: event.textStyle,
-//                                     ),
-//                                     const SizedBox(
-//                                       width: 10,
-//                                     ),
-//                                     Text(
-//                                       DateFormat.Hm().format(event.start),
-//                                       style: event.textStyle,
-//                                     ),
-//                                   ],
-//                                 ),
-//                                 const SizedBox(
-//                                   height: 10,
-//                                 ),
-//                                 Text(
-//                                   event.description,
-//                                   style: event.textStyle,
-//                                 )
-//                               ],
-//                             ),
-//                           );

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task/presentation/bloc/user/user_bloc.dart';
 
+import '../../../core/constants/assets.dart';
 import '../../../core/constants/colors.dart';
+import '../../../core/constants/strings.dart';
 import 'widgets/welcome_screen_top_image.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -21,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
               top: 0,
               left: 0,
               child: Image.asset(
-                "assets/images/main_top.png",
+                kMainTopUrlImage,
                 width: 120,
               ),
             ),
@@ -75,7 +77,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                       textInputAction: TextInputAction.next,
                       cursorColor: kPrimaryColor,
                       decoration: const InputDecoration(
-                        hintText: "Your name",
+                        hintText: kYourNameHintText,
                         prefixIcon: Padding(
                           padding: EdgeInsets.all(kDefaultPadding),
                           child: Icon(Icons.person),
@@ -83,7 +85,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                       ),
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Please enter your name';
+                          return kNameValidatorMessage;
                         }
                         return null;
                       },
@@ -100,7 +102,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                           }
                         },
                         child: const Text(
-                          "OPEN",
+                          kLoginBtnText,
                         ),
                       ),
                     ),

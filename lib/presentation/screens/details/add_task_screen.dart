@@ -6,6 +6,7 @@ import 'package:task/core/util/date_time_converter.dart';
 import 'package:task/presentation/screens/details/widgets/custom_button.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../../core/constants/strings.dart';
 import '../../../data/models/task.dart';
 import '../../bloc/task/task_bloc.dart';
 import 'widgets/custom_input_field.dart';
@@ -60,7 +61,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Add Task",
+                    kAddTaskText,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -96,19 +97,19 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     children: [
                       CustomInputField(
                         controller: _titleController,
-                        title: "Title",
-                        hint: "write your task title",
+                        title: kTitleText,
+                        hint: kTitleHintText,
                         maxLength: 20,
                       ),
                       CustomInputField(
                         controller: _descriptionController,
-                        title: "Description",
-                        hint: "description",
+                        title: kDescriptionText,
+                        hint: kDescriptionHintText,
                         minLines: 2,
                         maxLength: 100,
                       ),
                       CustomInputField(
-                        title: "Date",
+                        title: kDateText,
                         hint: DateFormat.yMEd().format(_selectedDate),
                         widget: IconButton(
                           icon: const Icon(
@@ -120,7 +121,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         ),
                       ),
                       CustomInputField(
-                        title: "Start Time",
+                        title: kStartTimeText,
                         hint: _startTime.format(context),
                         widget: IconButton(
                           icon: const Icon(
@@ -141,7 +142,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 children: [
                   _colorChooser(),
                   CustomButton(
-                    label: taskId == null ? "Create Task" : "Update Task",
+                    label: taskId == null ? kCreateTaskText : kUpdateTaskText,
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
                         addStartTimeToDate();
@@ -191,7 +192,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Color",
+          kColorText,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
@@ -286,7 +287,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       ),
       elevation: 0,
       title: const Text(
-        "add new Task",
+        kAddNewTaskText,
         style: TextStyle(color: Colors.black),
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/strings.dart';
+
 class OnError extends StatelessWidget {
   final String messgae;
   const OnError({
@@ -9,6 +11,6 @@ class OnError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("something wrong!"));
+    return const Center(child: Text(kSomethingWrongText));
   }
 }

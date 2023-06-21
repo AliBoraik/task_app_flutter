@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:task/presentation/screens/details/detail_task_screen.dart';
 
+import '../../../../core/constants/strings.dart';
 import '../../../../data/models/task.dart';
 import '../../../bloc/task/task_bloc.dart';
 import '../../details/add_task_screen.dart';
@@ -48,7 +49,7 @@ class TaskList extends StatelessWidget {
         strokeWidth: 2,
         child: const Center(
           child: Text(
-            "+ Add",
+            kAddTaskText,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -66,19 +67,19 @@ class TaskList extends StatelessWidget {
         return showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: const Text('Are you sure?'),
+            title: const Text(kDialogAreYouSureText),
             content: const Text(
-              'Do you want to remove the item from the tasks?',
+              kConfirmationText,
             ),
             actions: <Widget>[
               TextButton(
-                child: const Text('No'),
+                child: const Text(kNoText),
                 onPressed: () {
                   Navigator.of(ctx).pop(false);
                 },
               ),
               TextButton(
-                child: const Text('Yes'),
+                child: const Text(kYesText),
                 onPressed: () {
                   Navigator.of(ctx).pop(true);
                 },
@@ -173,7 +174,7 @@ class TaskList extends StatelessWidget {
                       child: _bulidTaskStatus(
                         Colors.white,
                         Colors.black,
-                        task.isCompleted ? "Undone" : "Done",
+                        task.isCompleted ? kUndoneText : kDoneText,
                       ),
                     ),
                   )

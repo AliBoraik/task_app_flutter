@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/strings.dart';
+
 class CustomInputField extends StatelessWidget {
   final String title;
   final String hint;
@@ -65,7 +67,7 @@ class CustomInputField extends StatelessWidget {
                     validator: (value) {
                       if (widget != null) return null;
                       if (value == null || value.isEmpty) {
-                        return 'Please enter some ${title.toLowerCase()}';
+                        return '$kPleaseEnterSomeText ${title.toLowerCase()}';
                       }
                       return null;
                     },

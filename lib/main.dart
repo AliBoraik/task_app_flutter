@@ -8,6 +8,7 @@ import 'package:task/presentation/screens/welcome/welcome_screen.dart';
 import 'package:task/presentation/screens/details/add_task_screen.dart';
 import 'package:task/presentation/screens/details/detail_task_screen.dart';
 import 'core/constants/colors.dart';
+import 'core/constants/strings.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 import 'presentation/screens/welcome/widgets/loading_widget.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: kMaterialAppTitle,
         theme: ThemeData(
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,

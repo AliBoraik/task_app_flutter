@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task/presentation/bloc/user/user_bloc.dart';
 import 'package:task/presentation/screens/details/add_task_screen.dart';
 
+import '../../../core/constants/assets.dart';
+import '../../../core/constants/strings.dart';
 import '../../bloc/task/task_bloc.dart';
 import 'widgets/error_widget.dart';
 import 'widgets/task_list.widget.dart';
@@ -23,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(15),
             child: const Text(
-              "Tasks",
+              kTasksHomeTitle,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
@@ -94,11 +96,11 @@ class HomeScreen extends StatelessWidget {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "Home",
+              label: kBottomNavigationBarHomeLabel,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: "Preson",
+              label: kBottomNavigationBarPresonLabel,
             )
           ],
         ),
@@ -119,7 +121,7 @@ class HomeScreen extends StatelessWidget {
             margin: const EdgeInsets.only(left: 10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset("assets/images/avatar.png"),
+              child: Image.asset(kAppBarAvatarImage),
             ),
           ),
           const SizedBox(
@@ -150,11 +152,11 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (_) => [
             const PopupMenuItem(
               value: PopupMenuHomeOption.deleteAll,
-              child: Text('delete All'),
+              child: Text(kAppBarDeleteAllAction),
             ),
             const PopupMenuItem(
               value: PopupMenuHomeOption.logout,
-              child: Text('logout'),
+              child: Text(kAppBarLogoutAction),
             ),
           ],
         ),

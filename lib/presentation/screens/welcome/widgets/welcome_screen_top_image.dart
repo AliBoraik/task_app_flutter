@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../core/constants/assets.dart';
 import '../../../../core/constants/colors.dart';
 
 class WelcomeScreenTopImage extends StatelessWidget {
@@ -16,7 +17,7 @@ class WelcomeScreenTopImage extends StatelessWidget {
           children: [
             Expanded(
               flex: 8,
-              child: SvgPicture.asset("assets/icons/login.svg"),
+              child: SvgPicture.asset(kloginIcon),
             ),
           ],
         ),
