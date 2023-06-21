@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
             width: 10,
           ),
           Text(
-            "Hi , $name",
+            "$kHiText , $name",
             style: const TextStyle(
                 color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           )

@@ -30,3 +30,4 @@ const String kUpdateTaskText = 'Update Task';
 const String kColorText = 'Color';
 const String kAddNewTaskText = 'add new Task';
 const String kPleaseEnterSomeText = 'Please enter somek';
+const String kHiText = 'Hi';
