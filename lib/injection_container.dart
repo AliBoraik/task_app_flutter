@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task/data/controller/task_controller.dart';
 import 'package:task/data/controller/user_controller.dart';
 import 'package:task/domain/usecases/add_task.dart';
+import 'package:task/domain/usecases/edit_user_name.dart';
 import 'package:task/domain/usecases/get_all_tasks.dart';
 import 'package:task/domain/usecases/get_name.dart';
 import 'package:task/domain/usecases/remove_task.dart';
@@ -68,6 +69,7 @@ void init() {
       getName: sl(),
       saveName: sl(),
       removename: sl(),
+      editName: sl(),
     ),
   );
 
@@ -80,6 +82,7 @@ void init() {
   sl.registerLazySingleton(() => SaveName(sl()));
   sl.registerLazySingleton(() => GetName(sl()));
   sl.registerLazySingleton(() => RemoveUsername(sl()));
+  sl.registerLazySingleton(() => EditName(sl()));
 
   //******  core *******//
   sl.registerLazySingleton(() => InputConverter());

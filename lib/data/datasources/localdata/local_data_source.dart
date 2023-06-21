@@ -12,6 +12,7 @@ abstract class LocalDataSource {
   Future<void> deleteAllTasks();
   Future<void> deleteTask(String id);
   Future<void> saveName(String name);
+  Future<void> editName(String name);
   Future<void> removeName();
   Future<String> getName();
 }
@@ -78,6 +79,15 @@ class LocalDataSourceImpl extends LocalDataSource {
 
     bool userName = await prefs.clear();
     if (!userName) {
+      throw CacheException();
+    }
+  }
+
+  @override
+  Future<void> editName(String name) async {
+    final prefs = await SharedPreferences.getInstance();
+    final result = await prefs.setString('userName', name);
+    if (!result) {
       throw CacheException();
     }
   }

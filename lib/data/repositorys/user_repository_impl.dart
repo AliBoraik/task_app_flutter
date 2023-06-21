@@ -50,4 +50,16 @@ class UserRepositoryImpl implements UserRepository {
       return const Left(UnknownFailure("Unknown exception"));
     }
   }
+
+  @override
+  Future<Either<Failure, Ok>> editName(String name) async {
+    try {
+      await localDataSource.editName(name);
+      return Right(Ok());
+    } on CacheException {
+      return const Left(CacheFailure("Cannot save!"));
+    } catch (e) {
+      return const Left(UnknownFailure("Unknown exception"));
+    }
+  }
 }

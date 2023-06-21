@@ -11,6 +11,8 @@ import 'core/constants/colors.dart';
 import 'core/constants/strings.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
+import 'presentation/screens/profile/edit_profile.dart';
+import 'presentation/screens/profile/profile_screen.dart';
 import 'presentation/screens/welcome/widgets/loading_widget.dart';
 
 void main() {
@@ -68,15 +70,17 @@ class MyApp extends StatelessWidget {
             if (state is LoadingUserState) {
               return const LoadingScreen();
             }
-            if (state is SavedNameState) {
-              return const HomeScreen();
+            if (state is UserInitial) {
+              return const WelcomeScreen();
             }
-            return const WelcomeScreen();
+            return const HomeScreen();
           },
         ),
         routes: {
           TaskDetailScreen.routeName: (ctx) => const TaskDetailScreen(),
           AddTaskScreen.routeName: (ctx) => const AddTaskScreen(),
+          EditProfile.routeName: (ctx) => const EditProfile(),
+          ProfileScreen.routeName: (ctx) => const ProfileScreen(),
         },
       ),
     );
