@@ -16,3 +16,8 @@ class SaveNameEvent extends UserEvent {
 class CheckUserNameEvent extends UserEvent {}
 
 class RemoveUserNameEvent extends UserEvent {}
+
+class EditUserNameEvent extends UserEvent {
+  final String name;
+  const EditUserNameEvent(this.name);
+}

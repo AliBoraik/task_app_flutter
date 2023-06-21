@@ -6,6 +6,7 @@ import 'package:task/presentation/screens/details/add_task_screen.dart';
 import '../../../core/constants/assets.dart';
 import '../../../core/constants/strings.dart';
 import '../../bloc/task/task_bloc.dart';
+import '../profile/profile_screen.dart';
 import 'widgets/error_widget.dart';
 import 'widgets/task_list.widget.dart';
 
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(),
+      bottomNavigationBar: _buildBottomNavigationBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -69,7 +70,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBottomNavigationBar() {
+  Widget _buildBottomNavigationBar(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
@@ -93,6 +94,13 @@ class HomeScreen extends StatelessWidget {
           showUnselectedLabels: false,
           selectedItemColor: Colors.blueAccent,
           unselectedItemColor: Colors.grey.withOpacity(0.5),
+          onTap: (index) {
+            if (index == 1) {
+              Navigator.of(context).pushNamed(
+                ProfileScreen.routeName,
+              );
+            }
+          },
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -109,7 +117,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   AppBar _buildAppBar(BuildContext context) {
-    final name = BlocProvider.of<UserBloc>(context, listen: false).name;
+    final name = BlocProvider.of<UserBloc>(context).name;
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,

@@ -37,12 +37,24 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       );
     });
     on<RemoveUserNameEvent>((event, emit) async {
+      emit(LoadingUserState());
       var result = await userController.removeUsername();
       name = "";
       result.fold(
         (left) {},
         (right) {
           emit(UserInitial());
+        },
+      );
+    });
+    on<EditUserNameEvent>((event, emit) async {
+      emit(LoadingUserState());
+      var result = await userController.editUserName(event.name);
+      result.fold(
+        (left) {},
+        (right) {
+          name = event.name;
+          emit(EditedUserState(event.name));
         },
       );
     });

@@ -15,3 +15,8 @@ class SavedNameState extends UserState {
 }
 
 class LoadingUserState extends UserState {}
+
+class EditedUserState extends UserState {
+  final String name;
+  const EditedUserState(this.name);
+}
