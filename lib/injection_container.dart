@@ -25,7 +25,6 @@ import 'domain/usecases/delete_all_task.dart';
 final sl = GetIt.instance;
 
 void init() {
-  //******  Features - Number Trivia *******//
   //Bloc
   sl.registerFactory(
     () => TaskBloc(
