@@ -135,11 +135,29 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Text(
-            "$kHiText , $name",
-            style: const TextStyle(
-                color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
-          )
+          BlocBuilder<UserBloc, UserState>(
+            builder: (context, state) {
+              if (state is EditedUserState) {
+                return Text(
+                  "$kHiText , ${state.name}",
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                );
+              }
+              if (state is LoadingUserState) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return Text(
+                "$kHiText , $name",
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              );
+            },
+          ),
         ],
       ),
       actions: [
