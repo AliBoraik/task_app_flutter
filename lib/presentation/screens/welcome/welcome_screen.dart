@@ -77,7 +77,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                       decoration: const InputDecoration(
                         hintText: "Your name",
                         prefixIcon: Padding(
-                          padding: EdgeInsets.all(defaultPadding),
+                          padding: EdgeInsets.all(kDefaultPadding),
                           child: Icon(Icons.person),
                         ),
                       ),
@@ -88,7 +88,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: defaultPadding),
+                    const SizedBox(height: kDefaultPadding),
                     Hero(
                       tag: "login_btn",
                       child: ElevatedButton(
@@ -99,12 +99,12 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                                 .add(SaveNameEvent(name));
                           }
                         },
-                        child: Text(
-                          "Login".toUpperCase(),
+                        child: const Text(
+                          "OPEN",
                         ),
                       ),
                     ),
-                    const SizedBox(height: defaultPadding),
+                    const SizedBox(height: kDefaultPadding),
                   ],
                 ),
               ),
@@ -112,7 +112,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
             const Spacer(),
           ],
         ),
-        const SizedBox(height: defaultPadding), // Add this SizedBox
+        const SizedBox(height: kDefaultPadding), // Add this SizedBox
       ],
     );
   }

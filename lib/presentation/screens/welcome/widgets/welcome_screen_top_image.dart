@@ -20,7 +20,7 @@ class WelcomeScreenTopImage extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: defaultPadding * 2),
+        const SizedBox(height: kDefaultPadding * 2),
       ],
     );
   }

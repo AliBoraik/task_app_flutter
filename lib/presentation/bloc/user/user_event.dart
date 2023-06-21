@@ -13,6 +13,6 @@ class SaveNameEvent extends UserEvent {
   const SaveNameEvent(this.name);
 }
 
-class CheckUserEvent extends UserEvent {}
+class CheckUserNameEvent extends UserEvent {}
 
 class RemoveUserNameEvent extends UserEvent {}

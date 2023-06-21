@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           create: (context) => sl<TaskBloc>()..add(GetAllTasksEvent()),
         ),
         BlocProvider<UserBloc>(
-          create: (context) => sl<UserBloc>()..add(CheckUserEvent()),
+          create: (context) => sl<UserBloc>()..add(CheckUserNameEvent()),
         )
       ],
       child: MaterialApp(
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
             iconColor: kPrimaryColor,
             prefixIconColor: kPrimaryColor,
             contentPadding: EdgeInsets.symmetric(
-                horizontal: defaultPadding, vertical: defaultPadding),
+                horizontal: kDefaultPadding, vertical: kDefaultPadding),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(30)),
               borderSide: BorderSide.none,

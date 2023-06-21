@@ -23,7 +23,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         },
       );
     });
-    on<CheckUserEvent>((event, emit) async {
+    on<CheckUserNameEvent>((event, emit) async {
       emit(LoadingUserState());
       var result = await userController.getUserName();
       result.fold(
@@ -31,6 +31,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           emit(UserInitial());
         },
         (right) {
+          name = right;
           emit(SavedNameState(right));
         },
       );

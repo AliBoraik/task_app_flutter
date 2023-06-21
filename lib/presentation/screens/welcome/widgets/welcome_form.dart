@@ -17,30 +17,30 @@ class WelcomeForm extends StatelessWidget {
             textInputAction: TextInputAction.next,
             cursorColor: kPrimaryColor,
             onSaved: (email) {},
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: "Your email",
               prefixIcon: Padding(
-                padding: const EdgeInsets.all(defaultPadding),
+                padding: EdgeInsets.all(kDefaultPadding),
                 child: Icon(Icons.person),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
             child: TextFormField(
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Your password",
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.all(defaultPadding),
+                  padding: EdgeInsets.all(kDefaultPadding),
                   child: Icon(Icons.lock),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: defaultPadding),
+          const SizedBox(height: kDefaultPadding),
           Hero(
             tag: "login_btn",
             child: ElevatedButton(
@@ -50,7 +50,7 @@ class WelcomeForm extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: defaultPadding),
+          const SizedBox(height: kDefaultPadding),
         ],
       ),
     );
