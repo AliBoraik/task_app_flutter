@@ -25,6 +25,12 @@ The app defines the following use cases:
 - `getName()`: Retrieves the name associated with a task. Returns `Either<Failure, String>` representing the name or a failure.
 - `editName(String id)`: Edits the name associated with a task identified by its `id`. Returns `Either<Failure, Ok>` indicating success or failure.
 - `removeUsername()`: Removes the username. Returns `Either<Failure, Ok>` indicating success or failure.
+ 
+## Screenshots
+
+Here are some screenshots of the app:
+
+![Product Categories](screenshots/task.png)
 
 ## Getting Started
 To run this project locally, follow these steps:
