@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task/presentation/screens/home/home_screen.dart';
+import 'package:task/presentation/bloc/user/user_bloc.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../bloc/task/task_bloc.dart';
 import 'widgets/welcome_screen_top_image.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -96,8 +95,8 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             String name = _nameController.text;
-                            // BlocProvider.of<TaskBloc>(context)
-                            //     .add(SaveNameEvent(name));
+                            BlocProvider.of<UserBloc>(context)
+                                .add(SaveNameEvent(name));
                           }
                         },
                         child: Text(

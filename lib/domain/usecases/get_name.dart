@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 
 import '../../core/errors/failure.dart';
 import '../../core/usecases/usecase.dart';
-import '../repositories/task_repository.dart';
+import '../repositories/user_repositiry.dart';
 
 class GetName extends UseCase<String, NoParams> {
-  final TaskRepository _repository;
+  final UserRepository _repository;
 
   GetName(this._repository);
 

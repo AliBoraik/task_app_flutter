@@ -1,43 +1,47 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/controller/task_controller.dart';
+import '../../../data/controller/user_controller.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-  final TaskController taskController;
+  final UserController userController;
+  late String name = "";
   UserBloc({
-    required this.taskController,
+    required this.userController,
   }) : super(UserInitial()) {
     on<SaveNameEvent>((event, emit) async {
       emit(LoadingUserState());
-      var result = await taskController.saveUserName(event.name);
+      var result = await userController.saveUserName(event.name);
       result.fold(
         (left) {},
         (right) {
+          name = event.name;
           emit(SavedNameState(event.name));
         },
       );
     });
     on<CheckUserEvent>((event, emit) async {
       emit(LoadingUserState());
-      var result = await taskController.getUserName();
+      var result = await userController.getUserName();
       result.fold(
-        (left) {},
+        (left) {
+          emit(UserInitial());
+        },
         (right) {
           emit(SavedNameState(right));
         },
       );
     });
     on<RemoveUserNameEvent>((event, emit) async {
-      emit(LoadingUserState());
-      var result = await taskController.getUserName();
+      var result = await userController.removeUsername();
+      name = "";
       result.fold(
         (left) {},
         (right) {
-          emit(SavedNameState(right));
+          emit(UserInitial());
         },
       );
     });

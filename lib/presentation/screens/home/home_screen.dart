@@ -107,6 +107,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   AppBar _buildAppBar(BuildContext context) {
+    final name = BlocProvider.of<UserBloc>(context, listen: false).name;
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -124,9 +125,9 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          const Text(
-            "Hi , Ali",
-            style: TextStyle(
+          Text(
+            "Hi , $name",
+            style: const TextStyle(
                 color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           )
         ],
